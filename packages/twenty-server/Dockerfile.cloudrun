@@ -17,7 +17,7 @@ COPY ./packages/twenty-ui/package.json /app/packages/twenty-ui/
 COPY ./packages/twenty-shared/package.json /app/packages/twenty-shared/
 
 # Install all dependencies (including devDependencies for build)
-RUN yarn install --immutable && yarn cache clean && npx nx reset
+RUN yarn install && yarn cache clean && npx nx reset
 
 # Build stage
 FROM common-deps AS build
